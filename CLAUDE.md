@@ -10,60 +10,76 @@ GitHub: https://github.com/AndTram77/Transport
 
 - **Frontend**: Vue 3 + PrimeVue 4 + Vite + Pinia + Vue Router
 - **Стили**: Tailwind CSS + PrimeIcons
-- **База данных**: PostgreSQL 16 (Docker)
+- **База данных**: Integram V2 (kval) — основная БД
 - **HTTP-клиент**: Axios
-- **DB Admin UI**: Adminer (порт 8080)
+- **Integram API**: http://localhost:8081 (локально) / https://ai2o.ru (прод)
+
+## Integram — таблицы проекта (база: kval)
+
+| Таблица | ID | Описание |
+|---|---|---|
+| Transport_Водители | 1875997 | Водители: ФИО, ВУ, паспорт, баланс, рейтинг |
+| Transport_Автомобили | 1876002 | Авто: номер, VIN, ОСАГО, ТО, статус |
+| Transport_Заказы | 1876007 | Заказы: маршрут, стоимость, комиссия, агрегатор |
+| Transport_Смены | 1876012 | Смены: водитель + авто, выручка, пробег |
+| Transport_Финансы | 1876017 | Транзакции: доходы, расходы, выплаты |
+| Transport_ТО | 1876022 | Техобслуживание: тип, стоимость, сервис |
 
 ## Структура проекта
 
 ```
 src/
 ├── views/            # Страницы приложения
-│   ├── drivers/      # Управление водителями
-│   ├── vehicles/     # Управление автопарком
-│   ├── orders/       # Заказы и диспетчеризация
-│   ├── finance/      # Финансы и аналитика
-│   ├── reports/      # Отчёты
-│   └── settings/     # Настройки
+│   ├── Dashboard.vue          # Главная
+│   ├── drivers/               # Управление водителями
+│   ├── vehicles/              # Управление автопарком
+│   ├── orders/                # Заказы и диспетчеризация
+│   ├── finance/               # Финансы и аналитика
+│   ├── reports/               # Отчёты
+│   └── settings/              # Настройки
 ├── components/       # Переиспользуемые компоненты
 ├── composables/      # Vue composables
 ├── stores/           # Pinia stores
 ├── router/           # Vue Router
-├── api/              # API-клиент (Axios)
+├── api/              # API-клиент (Axios → Integram)
 └── utils/            # Утилиты
+```
 
-backend/
-├── db/
-│   └── init.sql      # Схема БД (расширяется по ТЗ)
-├── api/              # REST API (будет добавлен)
-└── services/         # Бизнес-логика
+## Integram API — как работать
+
+```js
+// Прочитать водителей
+GET /kval/1875997?JSON
+
+// Создать водителя
+POST /kval/1875997?JSON
+{ "ФИО": "Иванов И.И.", "Телефон": "+7..." }
+
+// Обновить запись
+PUT /kval/1875997/{id}?JSON
 ```
 
 ## Как запустить
 
 ```bash
-# Запустить БД
-docker-compose up -d
-
-# Запустить фронтенд
 npm install
-npm run dev          # http://localhost:5173
+npm run dev    # http://localhost:5173
+```
 
-# Adminer (управление БД)
-# http://localhost:8080
-# Server: postgres, User: crm_user, Pass: crm_pass, DB: transport_crm
+## Переменные окружения
+
+```
+VITE_INTEGRAM_URL=http://localhost:8081
+VITE_INTEGRAM_DB=kval
+VITE_INTEGRAM_TOKEN=...
 ```
 
 ## Статус
 
-- [ ] ТЗ получено (ожидается)
 - [x] Репозиторий склонирован
-- [x] Базовая структура Vue 3 + PrimeVue 4
-- [x] Docker Compose для PostgreSQL
-- [ ] Схема БД (после ТЗ)
-- [ ] API (после ТЗ)
-- [ ] UI компоненты (после ТЗ)
-
-## Рабочая ветка
-
-Основная ветка: `main`
+- [x] Vue 3 + PrimeVue 4 + Pinia + Router + Tailwind
+- [x] Integram выбран как основная БД
+- [x] 6 таблиц созданы в Integram (база kval)
+- [ ] ТЗ получено (ожидается)
+- [ ] API-слой для Integram
+- [ ] UI компоненты
