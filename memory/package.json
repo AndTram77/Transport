@@ -1,0 +1,10 @@
+{
+  "name": "transport-crm-memory",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "MCP memory bridge for Transport CRM developer agent",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  }
+}

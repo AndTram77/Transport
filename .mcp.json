@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "transport-memory": {
+      "command": "/usr/bin/node",
+      "args": ["/home/hive/transport-crm/memory/bridge.mjs"],
+      "env": {
+        "INTEGRAM_SERVER":   "https://ai2o.ru",
+        "INTEGRAM_DB":       "kval",
+        "INTEGRAM_LOGIN":    "unidel@yandex.ru",
+        "INTEGRAM_PASSWORD": "Denver2035"
+      }
+    }
+  }
+}
