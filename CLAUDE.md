@@ -158,11 +158,12 @@ src/
 - `new` входит в группу `hive` → полный доступ к файлам проекта
 
 ### Первый запуск под пользователем `new`
-При первом открытии проекта под `new` выполнить один раз:
+При ПЕРВОМ открытии проекта под `new` — выполнить ОДИН РАЗ:
 ```bash
-# Токен AndTram77 уже прописан в git remote URL проекта — пуш работает без настройки.
-# Если нужно настроить gh cli — добавить токен вручную: gh auth login
+mkdir -p ~/.claude/projects/-home-hive-transport-crm
+ln -s /home/hive/transport-crm/shared-memory ~/.claude/projects/-home-hive-transport-crm/memory
 ```
+Это создаёт симлинк на общую память — обе сессии (hive и new) читают и пишут в одно место.
 
 ### Push из любого пользователя
 Remote настроен с токеном в URL — пуш работает из любого аккаунта:
@@ -171,10 +172,12 @@ git push origin main  # работает и под hive, и под new
 ```
 
 ### Контекст между сессиями
-- `PROGRESS.md` — единая точка состояния проекта, читается при любом пользователе
+- `PROGRESS.md` — единая точка состояния, читается при любом пользователе
 - `CLAUDE.md` — этот файл, инструкции для Claude при любом пользователе
-- Память Claude под `hive`: `/home/hive/.claude/projects/-home-hive-transport-crm/memory/`
-- Память Claude под `new`: `/home/new/.claude/projects/-home-hive-transport-crm/memory/` (если есть)
+- **Общая память:** `/home/hive/transport-crm/shared-memory/` — физически здесь, доступна обоим
+- Память hive: `~/.claude/projects/-home-hive-transport-crm/memory` → симлинк на shared-memory ✅
+- Память new: `~/.claude/projects/-home-hive-transport-crm/memory` → симлинк на shared-memory (после первого запуска)
+- **ЧИТАТЬ при старте:** `shared-memory/MEMORY.md` — там все решения проекта
 
 ## Правила работы
 
