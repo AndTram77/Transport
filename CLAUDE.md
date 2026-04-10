@@ -23,7 +23,7 @@
 | Сборка | Vite |
 | HTTP | Axios |
 | БД / API | Integram V2 (база `kval`, REST API) |
-| Деплой | Docker + Nginx, сервер 185.233.200.13 |
+| Деплой | Docker + Nginx, сервер 185.233.200.13:3010 |
 
 ## Integram — таблицы (база: kval)
 
@@ -121,6 +121,14 @@ src/
 ### Deploy / Vite конфиг
 - Vite config: `/home/new/integram/vite.config.mjs`
 - Deploy: `/home/new/integram/deploy-vue-to-production.sh`
+
+## Деплой — решения
+
+- **Сервер:** `185.233.200.13` (ai-agent@)
+- **Порт:** `3010` (отдельный от BEEBOT)
+- **Схема:** Docker контейнер (Vue SPA build) → Nginx reverse proxy → порт 3010
+- **Домен:** нет (добавить позже, когда заказчик купит)
+- **URL для демо:** `http://185.233.200.13:3010`
 
 ## Правила работы
 

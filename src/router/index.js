@@ -26,9 +26,24 @@ const routes = [
     component: () => import('@/views/orders/OrdersList.vue'),
   },
   {
+    path: '/shifts',
+    name: 'Shifts',
+    component: () => import('@/views/Dashboard.vue'), // заглушка — Спринт 4
+  },
+  {
     path: '/finance',
     name: 'Finance',
     component: () => import('@/views/finance/FinanceDashboard.vue'),
+  },
+  {
+    path: '/maintenance',
+    name: 'Maintenance',
+    component: () => import('@/views/Dashboard.vue'), // заглушка — Спринт 6
+  },
+  {
+    path: '/contracts',
+    name: 'Contracts',
+    component: () => import('@/views/Dashboard.vue'), // заглушка — Спринт 6
   },
   {
     path: '/reports',
