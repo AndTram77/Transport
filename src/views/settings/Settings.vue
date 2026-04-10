@@ -1,7 +1,22 @@
+<script setup>
+import PageHeader from '@/components/common/PageHeader.vue'
+import EmptyState from '@/components/common/EmptyState.vue'
+</script>
+
 <template>
-  <div class="p-6">
-    <h1 class="text-2xl font-bold">Settings</h1>
-    <p class="text-gray-500 mt-2">Раздел будет реализован согласно ТЗ.</p>
+  <div>
+    <PageHeader
+      title="Настройки"
+      subtitle="Параметры системы и таксопарка"
+      icon="pi pi-cog"
+    />
+
+    <div class="card">
+      <EmptyState
+        icon="pi pi-cog"
+        title="Настройки появятся в Спринте 8"
+        message="Реквизиты компании, тарифы, интеграции с агрегаторами"
+      />
+    </div>
   </div>
 </template>
-<script setup></script>
