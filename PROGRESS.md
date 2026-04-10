@@ -3,8 +3,9 @@
 ## Текущий статус
 
 **Спринт:** 0 — Фундамент
-**Общий прогресс:** ~5% MVP
-**Дата последнего обновления:** 2026-04-02
+**Спринт 0:** ЗАВЕРШЁН ✅
+**Общий прогресс:** ~15% MVP
+**Дата последнего обновления:** 2026-04-10
 
 ## Что готово
 
@@ -28,13 +29,13 @@
 
 ## Что НЕ готово (следующие шаги)
 
-### Спринт 0 — Фундамент (текущий)
+### Спринт 0 — Фундамент ✅ ЗАВЕРШЁН
 - [x] AppLayout + AppSidebar + AppTopbar + AppMenu + AppFooter
 - [x] composables/layout.js — тема, сворачивание сайдбара
 - [x] Страница Login + форма авторизации (LoginView.vue)
 - [x] Auth store (Pinia) + router guards
-- [ ] Базовые компоненты: StatusBadge, PageHeader, EmptyState
-- [ ] Composables: useTable, useForm
+- [x] Базовые компоненты: StatusBadge, PageHeader, EmptyState
+- [x] Composables: useTable, useForm
 
 ### Следующий после Спринта 0
 - Спринт 1: Дашборд (KPI, графики)
@@ -47,15 +48,13 @@
 
 ## Последняя сессия
 
-**Дата:** 2026-04-10 (сессия 4)
+**Дата:** 2026-04-10 (сессия 5)
 **Что делали:**
-- Зафиксировали деплой: сервер 185.233.200.13:3010, Docker + Nginx, без домена (MVP)
-- Настроили двупользовательский доступ (hive + new): setgid, group-writable, git sharedRepository
-- Прописали токен AndTram77 в git remote URL, добавили в gh config
-- Спринт 0: создали AppLayout, AppSidebar, AppTopbar, AppMenu, AppMenuItem, AppFooter
-- Спринт 0: создали composables/layout.js (тема, сворачивание сайдбара)
-- Спринт 0: создали Auth — LoginView.vue, authStore.js, router guard
-**Следующий шаг:** Спринт 0 — базовые компоненты (StatusBadge, PageHeader, EmptyState) + composables (useTable, useForm), затем Спринт 1 — Дашборд
+- Спринт 0 закрыт: StatusBadge, PageHeader, EmptyState (src/components/common/)
+- Добавлены composables: useTable.js, useForm.js
+- Все views обновлены: используют PageHeader + EmptyState + StatusBadge + useTable
+- Сборка чистая (0 ошибок), пуш в GitHub
+**Следующий шаг:** Тестирование (npm run dev → проверить login, sidebar, все страницы), затем Спринт 1 — Дашборд
 
 ## Решения и заметки
 
