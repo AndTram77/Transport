@@ -29,11 +29,11 @@
 ## Что НЕ готово (следующие шаги)
 
 ### Спринт 0 — Фундамент (текущий)
-- [ ] AppLayout + AppSidebar + AppHeader
-- [ ] Страница Login + форма авторизации
-- [ ] Auth store (Pinia) + router guards
-- [ ] Таблица Transport_Пользователи в Integram
-- [ ] Базовые компоненты: StatusBadge, PageHeader, ConfirmDialog, EmptyState
+- [x] AppLayout + AppSidebar + AppTopbar + AppMenu + AppFooter
+- [x] composables/layout.js — тема, сворачивание сайдбара
+- [x] Страница Login + форма авторизации (LoginView.vue)
+- [x] Auth store (Pinia) + router guards
+- [ ] Базовые компоненты: StatusBadge, PageHeader, EmptyState
 - [ ] Composables: useTable, useForm
 
 ### Следующий после Спринта 0
@@ -47,15 +47,15 @@
 
 ## Последняя сессия
 
-**Дата:** 2026-04-02 (сессия 3)
+**Дата:** 2026-04-10 (сессия 4)
 **Что делали:**
-- Аудит состояния проекта (~5% MVP, Спринт 0 не начат)
-- Настроена система памяти и PROGRESS.md для непрерывности между сессиями
-- Аудит родственных проектов (integram, dronedoc2026, fund) — стек идентичный
-- Найдены и задокументированы готовые компоненты для переиспользования (Layout, Auth, DataTable)
-- Обновлён CLAUDE.md: источники компонентов, правила завершения сессии
-- Исправлен рендеринг Markdown-таблиц в ТЗ на GitHub (расширены разделители)
-**Следующий шаг:** Начать Спринт 0 — скопировать и адаптировать Layout из integram/, затем Auth
+- Зафиксировали деплой: сервер 185.233.200.13:3010, Docker + Nginx, без домена (MVP)
+- Настроили двупользовательский доступ (hive + new): setgid, group-writable, git sharedRepository
+- Прописали токен AndTram77 в git remote URL, добавили в gh config
+- Спринт 0: создали AppLayout, AppSidebar, AppTopbar, AppMenu, AppMenuItem, AppFooter
+- Спринт 0: создали composables/layout.js (тема, сворачивание сайдбара)
+- Спринт 0: создали Auth — LoginView.vue, authStore.js, router guard
+**Следующий шаг:** Спринт 0 — базовые компоненты (StatusBadge, PageHeader, EmptyState) + composables (useTable, useForm), затем Спринт 1 — Дашборд
 
 ## Решения и заметки
 
