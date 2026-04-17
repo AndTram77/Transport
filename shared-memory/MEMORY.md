@@ -18,6 +18,7 @@
 - [consulting_dpt_education.md](consulting_dpt_education.md) — ДПТ для образовательных услуг: налоги, НДС, дробление, АНО, бухпроводки. Следующий шаг: составить ТЭО и преамбулу договора под конкретных участников
 
 ## Проект
+- [project_workspace_structure.md](project_workspace_structure.md) — **НОВОЕ 2026-04-17:** архитектура workspace AndreyT с системой проектов
 - [project_client.md](project_client.md) — заказчик ИЖАВТОХОЛДИНГ, назначение CRM, ТЗ
 - [project_stack.md](project_stack.md) — стек: Vue 3 + PrimeVue 4 + Integram V2, без backend
 - [project_integram_tables.md](project_integram_tables.md) — ID 6 таблиц Integram (база kval)
