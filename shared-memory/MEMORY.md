@@ -1,10 +1,21 @@
 # Memory — Transport CRM "Мой Парк"
 
+## Индекс файлов памяти
+
+| Файл | Описание |
+|------|---------|
+| `_SUPER_CONTEXT.md` | Критичный контекст (не потеряется) |
+| `feedback_memory_saving.md` | Правило: сохранять решения СРАЗУ |
+| (другие файлы) | ... |
+
 ## Правила поведения
 - [feedback_memory_saving.md](feedback_memory_saving.md) — сохранять решения СРАЗУ, не откладывать на конец сессии
 
 ## Незавершённое (требует действия Андрея)
 - [project_memory_systems.md](project_memory_systems.md) — ❌ СТОП: нужны credentials для ai2o.ru/kval чтобы починить transport-memory MCP
+
+## Консультации
+- [consulting_dpt_education.md](consulting_dpt_education.md) — ДПТ для образовательных услуг: налоги, НДС, дробление, АНО, бухпроводки. Следующий шаг: составить ТЭО и преамбулу договора под конкретных участников
 
 ## Проект
 - [project_client.md](project_client.md) — заказчик ИЖАВТОХОЛДИНГ, назначение CRM, ТЗ
