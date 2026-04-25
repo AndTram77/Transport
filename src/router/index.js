@@ -22,6 +22,11 @@ const routes = [
     component: () => import('@/views/drivers/DriversList.vue'),
   },
   {
+    path: '/drivers/:id',
+    name: 'DriverDetail',
+    component: () => import('@/views/drivers/DriverDetail.vue'),
+  },
+  {
     path: '/vehicles',
     name: 'Vehicles',
     component: () => import('@/views/vehicles/VehiclesList.vue'),
