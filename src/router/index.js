@@ -54,12 +54,12 @@ const routes = [
   {
     path: '/maintenance',
     name: 'Maintenance',
-    component: () => import('@/views/Dashboard.vue'), // заглушка — Спринт 6
+    component: () => import('@/views/maintenance/MaintenanceList.vue'),
   },
   {
     path: '/contracts',
     name: 'Contracts',
-    component: () => import('@/views/Dashboard.vue'), // заглушка — Спринт 6
+    component: () => import('@/views/contracts/ContractsView.vue'),
   },
   {
     path: '/reports',
