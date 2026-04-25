@@ -10,6 +10,7 @@
 
 ## Правила поведения
 - [feedback_memory_saving.md](feedback_memory_saving.md) — сохранять решения СРАЗУ, не откладывать на конец сессии
+- [feedback_verification_rule.md](feedback_verification_rule.md) — после любого bulk/AI-агент действия — ОБЯЗАТЕЛЬНАЯ верификация результата через MCP, не верить отчёту агента
 
 ## Незавершённое (требует действия Андрея)
 - [project_memory_systems.md](project_memory_systems.md) — ❌ СТОП: нужны credentials для ai2o.ru/kval чтобы починить transport-memory MCP
