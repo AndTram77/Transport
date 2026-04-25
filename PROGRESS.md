@@ -2,79 +2,75 @@
 
 ## Текущий статус
 
-**Спринт:** 0 — Фундамент
-**Спринт 0:** ЗАВЕРШЁН ✅
-**Общий прогресс:** ~15% MVP
-**Дата последнего обновления:** 2026-04-10
+**Спринт:** 4 — Смены
+**Общий прогресс:** ~55% MVP
+**Дата последнего обновления:** 2026-04-25
 
 ## Что готово
 
 ### Инфраструктура
-- [x] Vue 3 + PrimeVue 4 + Pinia + Router + Tailwind — настроены
-- [x] Vite сборка работает (`npm run dev`)
-- [x] Docker Compose (postgres + adminer)
-- [x] GitHub репозиторий создан и настроен
+- [x] Vue 3 + PrimeVue 4 + Pinia + Router + Tailwind
+- [x] Vite сборка без ошибок
+- [x] Docker + Nginx, деплой на 185.233.200.13:3010 ✅
+- [x] GitHub: AndTram77/Transport, ветка main
 
 ### API-слой (src/api/)
-- [x] Axios instance с Bearer token и interceptors
+- [x] Axios instance с Bearer token
 - [x] Integram CRUD клиент (list, get, create, update, delete)
-- [x] 6 таблиц Integram созданы, ID сконфигурированы
+- [x] Workspace: transport-crm на ai2o.online (21 таблица)
 
-### Роутинг
-- [x] 7 маршрутов: dashboard, drivers, vehicles, orders, finance, reports, settings
+### Компоненты / Layout
+- [x] AppLayout + AppSidebar + AppTopbar + AppMenu
+- [x] StatusBadge, PageHeader, EmptyState
+- [x] composables: useTable, useForm
 
-### Документация
-- [x] ТЗ-комбинированное.md — полное ТЗ
-- [x] CLAUDE.md — инструкции для Claude
+### Спринт 0 ✅ ЗАВЕРШЁН
+- [x] Авторизация (LoginView + auth store + router guard)
+- [x] Layout, sidebar, theme switch
 
-## Что НЕ готово (следующие шаги)
+### Спринт 1 ✅ ЗАВЕРШЁН
+- [x] Dashboard: 4 KPI-карточки + график выручки 14 дней + последние смены
+- [x] useDashboard.js, KpiCard.vue
 
-### Спринт 0 — Фундамент ✅ ЗАВЕРШЁН
-- [x] AppLayout + AppSidebar + AppTopbar + AppMenu + AppFooter
-- [x] composables/layout.js — тема, сворачивание сайдбара
-- [x] Страница Login + форма авторизации (LoginView.vue)
-- [x] Auth store (Pinia) + router guards
-- [x] Базовые компоненты: StatusBadge, PageHeader, EmptyState
-- [x] Composables: useTable, useForm
+### Спринт 2 ✅ ЗАВЕРШЁН
+- [x] Автопарк: список + CRUD + карточка с 3 табами (Информация / Смены / ТО)
+- [x] VehiclesList.vue, VehicleDetail.vue, VehicleDialog.vue, useVehicles.js
 
-### Следующий после Спринта 0
-- Спринт 1: Дашборд (KPI, графики)
+### Спринт 3 ✅ ЗАВЕРШЁН
+- [x] Водители: список + CRUD + карточка с 3 табами (Профиль / Смены / Финансы)
+- [x] DriversList.vue, DriverDetail.vue, DriverDialog.vue, useDrivers.js
+- [x] Должники, рейтинг ★, поиск по имени/телефону
+
+## Следующий шаг
+
+**Спринт 4 — Смены (в работе)**
+- [ ] useShifts.js — CRUD для таблицы Смены (ID=22)
+- [ ] ShiftDialog.vue — форма открытия/закрытия смены
+- [ ] ShiftsList.vue — список смен с фильтром по водителю/авто/дате
+- [ ] Маршрут /shifts
+
+**Спринт 5 — Финансы**
+- [ ] FinanceDashboard.vue — полная реализация
+- [ ] Транзакции, выплаты, фильтры
+
+**Спринт 6 — ТО и Договора**
+**Спринт 7 — Отчёты**
+**Спринт 8 — Деплой / Настройки / Адаптивность**
 
 ## Последняя сессия
 
-**Дата:** 2026-04-02
-**Что делали:** Аудит состояния проекта, настройка CLAUDE.md и системы памяти
-**Следующий шаг:** Начать Спринт 0 — создать AppLayout (sidebar + header), затем авторизацию
-
-## Последняя сессия
-
-**Дата:** 2026-04-10 (сессия 5)
+**Дата:** 2026-04-25
 **Что делали:**
-- Спринт 0 закрыт: StatusBadge, PageHeader, EmptyState (src/components/common/)
-- Добавлены composables: useTable.js, useForm.js
-- Все views обновлены: используют PageHeader + EmptyState + StatusBadge + useTable
-- Сборка чистая (0 ошибок), пуш в GitHub
-- Настроена файловая память (6 файлов в memory/)
-- Обнаружен готовый MCP-сервер transport-memory (memory/bridge.mjs) — сломана авторизация
-- Обнаружен пустой mcp__memory граф
-- Добавлен промт инициализации нового проекта в общую память
-- CLAUDE.md обновлён: правило немедленного сохранения решений
+- Спринт 3 завершён: useDrivers.js, DriverDialog.vue, DriversList.vue, DriverDetail.vue
+- Маршрут /drivers/:id добавлен в router
+- Сборка чистая, коммит f3519cb, деплой на 185.233.200.13:3010 ✅
 
-**СТОП-ПОЙНТ — ждём от Андрея:**
-- Логин + пароль для Integram ai2o.ru/kval → исправить .mcp.json → починить transport-memory
-
-**Следующий шаг после credentials:**
-1. Починить transport-memory MCP (исправить .mcp.json)
-2. Заполнить MCP-память всеми фактами проекта
-3. Тестирование (npm run dev → login, sidebar, все страницы)
-4. Деплой на 185.233.200.13:3010
-5. Спринт 1 — Дашборд
+**Следующий шаг:** Спринт 4 — Смены
 
 ## Решения и заметки
 
-- Integram V2 выбран вместо Laravel + PostgreSQL — не нужен отдельный backend
-- PrimeVue 4 — основная библиотека компонентов, кастомные компоненты только при необходимости
-- **Деплой:** сервер 185.233.200.13 (ai-agent@), порт 3010, Docker + Nginx reverse proxy
-- **Домен:** нет, URL для демо — `http://185.233.200.13:3010` (домен добавим позже)
-- **Компоненты брать из integram/** (самая чистая реализация), адаптировать под Transport CRM
-- Layout, Auth, DataTable, composables — всё есть готовое, писать с нуля НЕ нужно
+- Integram workspace: transport-crm на ai2o.online (новый, не kval)
+- MCP confirm_action сломан → workaround: browser fetch через page.evaluate()
+- PrimeVue компоненты регистрируются глобально в main.js
+- Деплой: Docker multi-stage build, git pull + docker build на сервере
+- URL демо: http://185.233.200.13:3010

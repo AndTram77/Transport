@@ -44,7 +44,7 @@ const routes = [
   {
     path: '/shifts',
     name: 'Shifts',
-    component: () => import('@/views/Dashboard.vue'), // заглушка — Спринт 4
+    component: () => import('@/views/shifts/ShiftsList.vue'),
   },
   {
     path: '/finance',
